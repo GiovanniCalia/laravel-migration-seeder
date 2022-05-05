@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@index')->name('home');
+
+Route::get('/test/env', function () {
+    dd(env('DB_DATABASE'));
+});
