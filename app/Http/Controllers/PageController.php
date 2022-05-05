@@ -10,7 +10,7 @@ class PageController extends Controller
     //
 
     public function index(){
-        $trains = Train::where('Azienda', 'trenitalia')
+        $trains = Train::where('Data_di_partenza', 'like', date('Y-m-d'))
         ->get();
         dd($trains)
         ;
