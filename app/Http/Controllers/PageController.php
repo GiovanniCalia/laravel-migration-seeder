@@ -10,25 +10,30 @@ class PageController extends Controller
     //
 
     public function index(){
-        $trains = Train::all();
+        $trains = Train::where('Azienda', 'trenitalia')
+        ->get();
+        dd($trains)
+        ;
+
 
         return view('index', compact('trains'));
 
     }
 
     public function populate(){
-        for ($i=0; $i < 100; $i++) {
+        for ($i=0; $i < 5; $i++) {
             $singleTrain = new Train();
-            $singleTrain->Azienda = 'trenitalia;';
-            $singleTrain->Stazionedipartenza = 'Roma Termini';
-            $singleTrain->Stazionediarrivo = 'Milano';
-            $singleTrain->Orariodipartenza = 12-36;
-            $singleTrain->Orariodiarrivo = 16-53;
-            $singleTrain->Codicetreno = 23445;
-            $singleTrain->Numerocarrozze = 12;
-            $singleTrain->Inorario = 'yes';
-            $singleTrain->Inorario = 'no';
+            $singleTrain->Azienda = 'Trenitalia';
+            $singleTrain->Stazione_di_partenza = 'Roma Termini';
+            $singleTrain->Stazione_di_arrivo = 'Milano Porta Garibaldi';
+            $singleTrain->Orario_di_partenza = 12-36;
+            $singleTrain->Orario_di_arrivo = 16-53;
+            $singleTrain->Codice_treno = 23445;
+            $singleTrain->Numero_carrozze = 12;
+            $singleTrain->In_orario = 'yes';
+            $singleTrain->Cancellato = 'no';
             //$singleTrain->save();
+            dd($singleTrain);
 
             return 'completato';
         }
