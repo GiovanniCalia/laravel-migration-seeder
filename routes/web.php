@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PageController@index')->name('home');
 
+Route::get('/populate', 'PageController@populate')->name('populate');
+
+
 Route::get('/test/env', function () {
     dd(env('DB_DATABASE'));
 });
+
+
