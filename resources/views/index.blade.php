@@ -7,7 +7,14 @@
     <title>Home</title>
 </head>
 <body>
-    ciao!
+    <header>
+        <ol>
+            @foreach ($trains as $train)
+            <li>{{ $train->Azienda }}</li>
+                
+            @endforeach
+        </ol>
+    </header>
     
 </body>
 </html>

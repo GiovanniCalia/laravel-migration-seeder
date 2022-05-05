@@ -11,7 +11,6 @@ class PageController extends Controller
 
     public function index(){
         $trains = Train::all();
-        dd($trains);
 
         return view('index', compact('trains'));
 
@@ -29,6 +28,7 @@ class PageController extends Controller
             $singleTrain->Numerocarrozze = 12;
             $singleTrain->Inorario = 'yes';
             $singleTrain->Inorario = 'no';
+            //$singleTrain->save();
 
             return 'completato';
         }
