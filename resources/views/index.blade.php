@@ -18,6 +18,8 @@
             </li>     
             @endforeach
         </ol>
+
+        {{ $trains->links()}}
     </header>
     
 </body>

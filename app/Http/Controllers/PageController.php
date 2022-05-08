@@ -10,9 +10,10 @@ class PageController extends Controller
     //
 
     public function index(){
-        $trains = Train::where('Data_di_partenza', 'like', date('Y-m-d'))
-        ->get();
-        dd($trains)
+        $trains = Train::paginate(10) //where('Data_di_partenza', 'like', date('Y-m-d'))
+        //->get()
+        ;
+        //dd($trains)
         ;
 
 
